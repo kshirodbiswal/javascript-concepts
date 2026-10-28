@@ -1,0 +1,25 @@
+<!-- //here is a practical example of  closer. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closer</title>
+</head>
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+   function clickHandeler(color){
+        // document.body.style.backgroundColor= `${color}`  this is not working bcz it directly executed
+
+         return function(){
+                  document.body.style.backgroundColor= `${color}`
+        }
+    }
+     document.getElementById('orange').onclick=clickHandeler('orange')
+     document.getElementById('green').onclick=clickHandeler('green')
+</script>
+</html>

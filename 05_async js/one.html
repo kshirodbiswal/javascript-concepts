@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Asynchronus programing</h3>
+    <button id="stop">stop</button>
+</body>
+<script>
+   
+   function textChange() {
+    console.log('hii');
+    document.querySelector('h3').innerHTML='javascript series'
+   }
+      const reference1 = setTimeout(textChange,2000)
+    //   const reference2=setInterval(textChange, 4000);
+
+      setTimeout(()=>{ console.log('hii') },2000)
+    
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(reference1)
+    //    clearInterval(reference2)
+       console.log('stopeed');
+     })
+     console.log('3'); //this line is executed before the setTimeout method bcz it is the asynchronus method to execute the code
+</script>
+</html>
